@@ -23,7 +23,7 @@ all: build-native
 
 EMSCRIPTEN_VERSION=1.39.11
 EMSDK_LOCAL_PATH=emsdk
-EMCC=source $(CURDIR)/emsdk_env.sh && emcc
+EMCC=source $(CURDIR)/emsdk_env.sh && $(EMSDK_PATH)/upstream/emscripten/emcc
 
 .stamp-wasm-install-and-select-$(EMSCRIPTEN_VERSION):
 	rm -rf $(EMSDK_LOCAL_PATH)

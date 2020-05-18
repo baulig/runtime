@@ -180,7 +180,7 @@ EOF
     else
         cmake_command=cmake
         if [[ "$build_arch" == "wasm" ]]; then
-            cmake_command="emcmake $cmake_command"
+            cmake_command="/Users/Workspace/emsdk/upstream/emscripten/emcmake $cmake_command"
         fi
 
         echo "Executing $cmake_command --build \"$intermediatesDir\" --target install -j $__NumProc"
