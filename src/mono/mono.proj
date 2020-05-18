@@ -674,7 +674,7 @@
       <_MonoConfigureOptions>@(_MonoConfigureParams, ' ') @(_MonoAC_VARS, ' ') $(_MonoCFLAGSOption) $(_MonoCXXFLAGSOption) $(_MonoCPPFLAGSOption) $(_MonoCXXCPPFLAGSOption) $(_MonoLDFLAGSOption) $(_MonoCCLDFLAGSOption) $(_MonoCCOption) $(_MonoCXXOption) $(_MonoAROption) $(_MonoASOption) $(_MonoCPPOption) $(_MonoCXXCPPOption) $(_MonoDLLTOOLOption) $(_MonoLDOption) $(_MonoOBJDUMPOption) $(_MonoRANLIBOption) $(_MonoCMAKEOption) $(_MonoSTRIPOption)</_MonoConfigureOptions>
       <_MonoConfigureCommand Condition="'$(_MonoCCOption)' == '' and '$(_MonoCXXOption)' == ''">bash -c 'source $(RepositoryEngineeringDir)native/init-compiler.sh $(Platform) clang &amp;&amp; $(MonoProjectRoot)configure $(_MonoConfigureOptions)'</_MonoConfigureCommand>
       <_MonoConfigureCommand Condition="'$(_MonoCCOption)' != '' and '$(_MonoCXXOption)' != ''">$(MonoProjectRoot)configure $(_MonoConfigureOptions)</_MonoConfigureCommand>
-      <_MonoConfigureCommand Condition="'$(TargetsBrowser)' == 'true'">bash -c 'source $(EMSDK_PATH)/emsdk_env.sh &amp;&amp; emconfigure $(MonoProjectRoot)configure $(_MonoConfigureOptions)'</_MonoConfigureCommand>
+      <_MonoConfigureCommand Condition="'$(TargetsBrowser)' == 'true'">bash -c 'source $(EMSDK_PATH)/emsdk_env.sh &amp;&amp; $(EMSDK_PATH)/upstream/emscripten/emconfigure $(MonoProjectRoot)configure $(_MonoConfigureOptions)'</_MonoConfigureCommand>
     </PropertyGroup>
 
     <!-- AOT cross-compiler specific options -->
